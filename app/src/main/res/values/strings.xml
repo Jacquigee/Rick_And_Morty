@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Rick And Morty</string>
+    <string name="rm_character_name">Title</string>
+    <string name="rm_character_species">Species</string>
 </resources>
