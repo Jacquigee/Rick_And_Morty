@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Rick And Morty</string>
-    <string name="rm_character_name">Title</string>
+    <string name="rm_character_name">Name</string>
     <string name="rm_character_species">Species</string>
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
