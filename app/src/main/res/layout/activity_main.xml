@@ -3,8 +3,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/characterImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="16:9"
+        android:scaleType="centerCrop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src = "@tools:sample/backgrounds/scenic"/>
+
+    <TextView
+        android:id="@+id/characterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Character name"
+        android:layout_margin="16sp"
+        android:textSize="28sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/characterImage"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ImageView
+        android:id="@+id/genderIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_male_24"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/characterName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/characterName"/>
+
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Alive"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/characterName"
+        app:layout_constraintStart_toStartOf="@id/characterName"/>
+
+    <View
+        android:id="@+id/baseline"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/genderIcon"
+        app:layout_constraintStart_toStartOf="@+id/characterName"
+        app:layout_constraintTop_toBottomOf="@+id/status"/>
+    <TextView
+        android:id="@+id/originTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Origin"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/baseline"
+        app:layout_constraintStart_toStartOf="@+id/characterName"/>
+
+    <TextView
+        android:id="@+id/originSubText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Origin name"
+        android:fontFamily="monospace"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/originTitle"
+        app:layout_constraintStart_toStartOf="@+id/originTitle"/>
+
+    <TextView
+        android:id="@+id/speciesTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Species"
+        android:layout_marginTop="16dp"
+        android:fontFamily="monospace"
+        android:textSize="30sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/originSubText"
+        app:layout_constraintStart_toStartOf="@+id/originSubText"/>
+
+    <TextView
+        android:id="@+id/speciesSubText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Origin name"
+        android:fontFamily="monospace"
+        android:textSize="20sp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/speciesTitle"
+        app:layout_constraintStart_toStartOf="@+id/speciesTitle"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
