@@ -5,6 +5,10 @@ plugins {
     id 'kotlin-kapt'
 }
 
+// Epoxy
+kapt {
+    correctErrorTypes = true
+}
 android {
     compileSdk 32
 
@@ -69,4 +73,9 @@ dependencies {
 
     // ViewModel + Coroutine
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+
+    // Epoxy
+    def epoxyVersion = "5.1.1"
+    implementation "com.airbnb.android:epoxy:$epoxyVersion"
+    kapt("com.airbnb.android:epoxy-processor:$epoxyVersion")
 }

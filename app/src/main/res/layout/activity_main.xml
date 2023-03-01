@@ -6,16 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/characterImage"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="16:9"
-        android:scaleType="centerCrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src = "@tools:sample/backgrounds/scenic"/>
-
     <TextView
         android:id="@+id/characterName"
         android:layout_width="wrap_content"
@@ -24,7 +14,7 @@
         android:layout_margin="16sp"
         android:textSize="28sp"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/characterImage"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <ImageView
@@ -47,13 +37,25 @@
         app:layout_constraintTop_toBottomOf="@+id/characterName"
         app:layout_constraintStart_toStartOf="@id/characterName"/>
 
-    <View
-        android:id="@+id/baseline"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        app:layout_constraintEnd_toEndOf="@+id/genderIcon"
-        app:layout_constraintStart_toStartOf="@+id/characterName"
-        app:layout_constraintTop_toBottomOf="@+id/status"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/status">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/characterImage"
+            android:layout_width="220dp"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+            tools:src = "@tools:sample/backgrounds/scenic"/>
+    </com.google.android.material.card.MaterialCardView>
+
     <TextView
         android:id="@+id/originTitle"
         android:layout_width="wrap_content"
@@ -63,7 +65,7 @@
         android:fontFamily="monospace"
         android:textSize="30sp"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/baseline"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/characterName"/>
 
     <TextView
