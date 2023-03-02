@@ -6,103 +6,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/characterName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Character name"
-        android:layout_margin="16sp"
-        android:textSize="28sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
-
-    <ImageView
-        android:id="@+id/genderIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/ic_male_24"
-        android:layout_margin="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/characterName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/characterName"/>
-
-    <TextView
-        android:id="@+id/status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Alive"
-        android:textSize="18sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/characterName"
-        app:layout_constraintStart_toStartOf="@id/characterName"/>
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:cardElevation="4dp"
-        app:cardCornerRadius="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/status">
-
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/characterImage"
-            android:layout_width="220dp"
-            android:layout_height="220dp"
-            android:scaleType="centerCrop"
-            tools:src = "@tools:sample/backgrounds/scenic"/>
-    </com.google.android.material.card.MaterialCardView>
-
-    <TextView
-        android:id="@+id/originTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Origin"
-        android:layout_marginTop="16dp"
-        android:fontFamily="monospace"
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintStart_toStartOf="@+id/characterName"/>
-
-    <TextView
-        android:id="@+id/originSubText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Origin name"
-        android:fontFamily="monospace"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/originTitle"
-        app:layout_constraintStart_toStartOf="@+id/originTitle"/>
-
-    <TextView
-        android:id="@+id/speciesTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Species"
-        android:layout_marginTop="16dp"
-        android:fontFamily="monospace"
-        android:textSize="30sp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/originSubText"
-        app:layout_constraintStart_toStartOf="@+id/originSubText"/>
-
-    <TextView
-        android:id="@+id/speciesSubText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Origin name"
-        android:fontFamily="monospace"
-        android:textSize="20sp"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/speciesTitle"
-        app:layout_constraintStart_toStartOf="@+id/speciesTitle"/>
-
-
+    <com.airbnb.epoxy.EpoxyRecyclerView
+        android:id="@+id/epoxyRecycerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="24dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
